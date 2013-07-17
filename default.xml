@@ -399,7 +399,7 @@
 
   <!--Samsung Properties-->
   <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="cm-10.1" />
-  <project name="Ayysir/android_device_samsung_d2-common" path="device/samsung/d2-common" remote="github" revision="cm-10.1" />
+  <project name="TeamHellfire/android_device_samsung_d2-common" path="device/samsung/d2-common" remote="github" revision="cm-10.1" />
   <project name="Ayysir/android_device_samsung_jf-common" path="device/samsung/jf-common" remote="github" revision="cm-10.1" />
   <project name="Ayysir/android_kernel_samsung_jf" path="kernel/samsung/jf" remote="github" revision="cm-10.1" />
   <project name="Ayysir/android_kernel_samsung_d2" path="kernel/samsung/d2" remote="github" revision="cm-10.1" />
