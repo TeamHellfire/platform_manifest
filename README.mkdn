@@ -1,50 +1,49 @@
-CyanogenMod
+HELLFIRE ROM
 ===========
 
-Submitting Patches
+
+
+Create Workspace
 ------------------
-Patches are always welcome!  Please submit your patches via CyanogenMod Gerrit!
-You can do this by using these commands:
+mkdir android
 
-    (From root android directory)
-    . build/envsetup.sh
-    (Go to repo you are patching, make your changes and commit)
-    cmgerrit <for(new)/changes(patch set)> <branch/change-id> 
+cd android
 
-    repo start cm-10.1 .
-    (Make your changes and commit)
-    repo upload .
-Note: "." meaning current directory
-For more help on using this tool, use this command: repo help upload
+mkdir hellfire
 
-Make your changes and commit with a detailed message, starting with what you are working with (i.e. vision: Update Kernel)
-Commit your patches in a single commit. Squash multiple commit using this command: git rebase -i HEAD~<# of commits>
+cd hellfire
 
-To view the status of your and others' patches, visit [CyanogenMod Code Review](http://review.cyanogenmod.org/)
 
 
 Getting Started
 ---------------
 
-To get started with Android/CyanogenMod, you'll need to get
+To get started with HELLFIRE goodness you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
 
 To initialize your local repository using the CyanogenMod trees, use a command like this:
 
-    repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1
+    repo init -u git://github.com/TeamHellfire/platform_manifest.git -b cm-10.1
+
+OR
+
+To initialize your local repository using the AOSP trees, use a command like this:
+
+    repo init -u git://github.com/TeamHellfire/platform_manifest.git -b aosp
 
 Then to sync up:
 
-    repo sync
+    repo sync -j#
 
-Please see the [CyanogenMod Wiki](http://wiki.cyanogenmod.org/) for building instructions.
+*"#" means job number equal +1 to how much cores your cpu has. i.e 4 core processor + 1 = -j5*
 
-For more information on this Github Organization and how it is structured, 
-please [read the wiki article](http://wiki.cyanogenmod.org/w/Github_Organization)
 
-Buildbot
---------
+Need to pull down the prebuilt add-ons for CM:
+---------------
+cd vendor/cm/
+./get-prebuilts
 
-All supported devices are built nightly and periodically as changes are committed to ensure the source trees remain buildable.
 
-You can view the current build statuses at [CyanogenMod Jenkins](http://jenkins.cyanogenmod.org/)
+Compiling
+---------------
+. build/envsetup.sh && brunch cm_d2tmo-userdebug -j8 or . build/envsetup.sh && brunch cm_d2att-userdebug -j8 or . build/envsetup.sh && brunch cm_d2spr-userdebug -j8
